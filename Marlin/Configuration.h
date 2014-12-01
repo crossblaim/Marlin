@@ -106,21 +106,21 @@
 // Make delta curves from many straight lines (linear interpolation).
 // This is a trade-off between visible corners (not enough segments)
 // and processor overload (too many expensive sqrt calls).
-#define DELTA_SEGMENTS_PER_SECOND 200
+#define DELTA_SEGMENTS_PER_SECOND 100
 
 // NOTE NB all values for DELTA_* values MUST be floating point, so always have a decimal point in them
 
 // Center-to-center distance of the holes in the diagonal push rods.
-#define DELTA_DIAGONAL_ROD 250.0 // mm
+#define DELTA_DIAGONAL_ROD 153.0 // mm
 
 // Horizontal offset from middle of printer to smooth rod center.
-#define DELTA_SMOOTH_ROD_OFFSET 175.0 // mm
+#define DELTA_SMOOTH_ROD_OFFSET 111.9 // mm
 
 // Horizontal offset of the universal joints on the end effector.
 #define DELTA_EFFECTOR_OFFSET 33.0 // mm
 
 // Horizontal offset of the universal joints on the carriages.
-#define DELTA_CARRIAGE_OFFSET 18.0 // mm
+#define DELTA_CARRIAGE_OFFSET 14.0 // mm
 
 // Effective horizontal distance bridged by diagonal push rods.
 #define DELTA_RADIUS (DELTA_SMOOTH_ROD_OFFSET-DELTA_EFFECTOR_OFFSET-DELTA_CARRIAGE_OFFSET)
@@ -518,12 +518,12 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 
 // default settings
 // delta speeds must be the same on xyz
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {80, 80, 80, 760*1.1}  // default steps per unit for Kossel (GT2, 20 tooth)
-#define DEFAULT_MAX_FEEDRATE          {500, 500, 500, 25}    // (mm/sec)
-#define DEFAULT_MAX_ACCELERATION      {9000,9000,9000,10000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {55.5, 55.5, 55.5, 120}  // default steps per unit for Kossel (GT2, 20 tooth)
+#define DEFAULT_MAX_FEEDRATE          {380, 380, 380, 29}    // (mm/sec)
+#define DEFAULT_MAX_ACCELERATION      {500, 500, 500, 380}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
 
-#define DEFAULT_ACCELERATION          3000    // X, Y, Z and E max acceleration in mm/s^2 for printing moves
-#define DEFAULT_RETRACT_ACCELERATION  3000   // X, Y, Z and E max acceleration in mm/s^2 for retracts
+#define DEFAULT_ACCELERATION          380    // X, Y, Z and E max acceleration in mm/s^2 for printing moves
+#define DEFAULT_RETRACT_ACCELERATION  380   // X, Y, Z and E max acceleration in mm/s^2 for retracts
 
 // Offset of the extruders (uncomment if using more than one and relying on firmware to position when changing).
 // The offset has to be X=0, Y=0 for the extruder 0 hotend (default extruder).
@@ -534,7 +534,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 // The speed change that does not require acceleration (i.e. the software might assume it can be done instantaneously)
 #define DEFAULT_XYJERK                20.0    // (mm/sec)
 #define DEFAULT_ZJERK                 20.0    // (mm/sec) Must be same as XY for delta
-#define DEFAULT_EJERK                 5.0    // (mm/sec)
+#define DEFAULT_EJERK                 15.0    // (mm/sec)
 
 //===========================================================================
 //=============================Additional Features===========================
@@ -561,12 +561,12 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 #define EEPROM_CHITCHAT
 
 // Preheat Constants
-#define PLA_PREHEAT_HOTEND_TEMP 180
-#define PLA_PREHEAT_HPB_TEMP 70
+#define PLA_PREHEAT_HOTEND_TEMP 205
+#define PLA_PREHEAT_HPB_TEMP 0
 #define PLA_PREHEAT_FAN_SPEED 255   // Insert Value between 0 and 255
 
-#define ABS_PREHEAT_HOTEND_TEMP 240
-#define ABS_PREHEAT_HPB_TEMP 100
+#define ABS_PREHEAT_HOTEND_TEMP 245
+#define ABS_PREHEAT_HPB_TEMP 0
 #define ABS_PREHEAT_FAN_SPEED 255   // Insert Value between 0 and 255
 
 //LCD and SD support
